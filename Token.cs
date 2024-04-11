@@ -15,7 +15,7 @@
 
         public override string? ToString()
         {
-            return $"Token: {Tipo}, Lexema: {lexema}";
+            return $"Token: {Tipo}, Lexema: {Lexema}";
         }
     }
 }

@@ -2,20 +2,20 @@
 {
     public class Token
     {
-        public TokenTipo Type { get; }
+        public TokenTipo Tipo { get; }
 
-        public string? Value { get; }
+        public string? Lexema { get; }
 
-        public Token(TokenTipo type, string? value)
+        public Token(TokenTipo tipo, string? lexema)
         {
-            Type = type;
+            Tipo = tipo;
             
-            Value = value;
+            Lexema = lexema;
         }
 
         public override string? ToString()
         {
-            return $"Token: {Type}, Lexema: {Value}";
+            return $"Token: {Tipo}, Lexema: {lexema}";
         }
     }
 }

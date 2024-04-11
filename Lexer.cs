@@ -54,7 +54,7 @@ namespace LexerAri
             return (resultado, substituicoes);
         }
 
-        public IEnumerable<Token> Casamento()
+        public IEnumerable<Token> Casar()
         {
             var resultado = new List<Token>();
 

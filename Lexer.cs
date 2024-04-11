@@ -57,17 +57,11 @@ namespace LexerAri
         public IEnumerable<Token> Casar()
         {
             var resultado = new List<Token>();
-
             var regexPattern = string.Join("|", regras.Select(p => $"({p.padrao})"));
-
             var regex = new Regex(regexPattern);
-
             var entradaTratada = LimparEntrada(_entrada);
-
             var matches = regex.Matches(entradaTratada.Item1).ToList();
-
             var caracteresInvalidos = entradaTratada.Item2;
-
             foreach (var match in matches)
             {
                 for (int i = 0; i < regras.Count; i++)
@@ -77,18 +71,14 @@ namespace LexerAri
                         if (regras[i].Tipo == TokenTipo.INVALIDO)
                         {
                             resultado.Add(new Token(regras[i].Tipo, caracteresInvalidos.FirstOrDefault()));
-
                             caracteresInvalidos.RemoveAt(0);
                         }
-                            
                         else
                             resultado.Add(new Token(regras[i].Tipo, match.Value));
-
                         break;
                     }
                 }
             }
-
             return resultado;
         }
     }
